@@ -1,4 +1,4 @@
-<h1 align="center">🌍 Plataforma Web para ONGs</h1>
+<h1 align="center">🐶 Plataforma Web para ONGs</h1>
 <p align="center">
   <strong>Experiência Prática - Entrega 1 | Fundamentos e Estruturação (HTML5 Semântico)</strong><br>
   Desenvolvimento Web Front-End • Análise e Desenvolvimento de Sistemas
