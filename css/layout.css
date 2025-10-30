@@ -1,1 +1,59 @@
-*/Layout principal/*
+/* Layout principal */
+
+/* Container grid 12 colunas */
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:var(--space-3);
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:var(--space-3);
+}
+
+/* Header */
+header.site-header{
+  grid-column:1 / -1;
+  background:var(--color-primary);
+  color:var(--color-secondary);
+  padding:var(--space-2) var(--space-3);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-radius:12px;
+}
+.site-header .brand{
+  display:flex;
+  gap:var(--space-2);
+  align-items:center;
+}
+.site-header img.logo{height:64px; width:auto}
+
+/* Nav */
+.navbar { display:flex; gap:var(--space-3); align-items:center; }
+.nav-links{ display:flex; gap:var(--space-3); list-style:none; margin:0; padding:0;}
+.nav-links a{ color:var(--color-secondary); font-weight:600; padding:8px 12px; border-radius:8px; }
+.nav-links a:hover{ background:rgba(255,255,255,0.06); color:var(--color-light) }
+
+/* Menu hambúrguer (mobile) */
+.menu-toggle{ display:none; background:none; border:0; color:var(--color-secondary); font-size:1.6rem; cursor:pointer; }
+.nav-links.mobile{ display:none; position:absolute; top:90px; right:16px; flex-direction:column; background:var(--color-primary); padding:var(--space-2); border-radius:8px; box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+.nav-links.mobile a{ color:var(--color-secondary); padding:var(--space-2) 0; }
+
+/* Main/Sections */
+main{ grid-column:1 / -1; padding:var(--space-3) 0; }
+.section-title{ font-size:var(--fs-lg); margin-bottom:var(--space-2) }
+
+/* Footer */
+footer.site-footer{ grid-column:1 / -1; background:var(--color-tertiary); color:var(--color-secondary); padding:var(--space-3); text-align:center; border-radius:8px; }
+
+/* Responsividade - breakpoints (5) */
+@media (max-width:1200px){ .container{ grid-template-columns:repeat(10,1fr);} }
+@media (max-width:992px){ .container{ grid-template-columns:repeat(8,1fr);} }
+@media (max-width:768px){
+  .container{ grid-template-columns:repeat(6,1fr); padding:var(--space-2);}
+  .nav-links{ display:none; }
+  .menu-toggle{ display:block; }
+  .nav-links.mobile{ display:flex; }
+}
+@media (max-width:576px){ .container{ grid-template-columns:repeat(4,1fr);} }
+@media (max-width:400px){ .container{ grid-template-columns:repeat(2,1fr);} }
