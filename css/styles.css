@@ -1,1 +1,98 @@
-/*Estilização da Plataforma*/
+/* SISTEMA DE DESIGN - S.O.S. PATINHAS */
+:root {
+/* 🎨 Paleta de cores baseada na logo e escolhida por mim, para o projeto */
+  --cor-primaria: #4C6358;
+  --cor-secundaria: #F6F2E7;
+  --cor-terciaria: #2E3E35;
+  --cor-sucesso: #6F8B7E;
+  --cor-alerta: #E6A34A;
+  --cor-erro: #D95D39;
+  --cor-neutra: #E8E6E1;
+  --cor-clara: #FFFFFF;
+  --cor-escura: #1E1E1E;
+
+  /* 🔠 Tipografia */
+  --fonte-principal: 'Poppins', sans-serif;
+  --fonte-secundaria: 'Roboto', sans-serif;
+
+  /* 🧱 Tamanhos de fonte */
+  --fs-xl: 2.5rem;
+  --fs-lg: 2rem;
+  --fs-md: 1.25rem;
+  --fs-sm: 1rem;
+  --fs-xs: 0.875rem;
+
+  /* 📏 Espaçamento modular */
+  --esp-1: 8px;
+  --esp-2: 16px;
+  --esp-3: 24px;
+  --esp-4: 32px;
+  --esp-5: 48px;
+  --esp-6: 64px;
+}
+
+/* ======= ESTILOS BASE ======= */
+body {
+  margin: 0;
+  font-family: var(--fonte-principal);
+  background-color: var(--cor-secundaria);
+  color: var(--cor-escura);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-secundaria);
+  color: var(--cor-primaria);
+}
+
+a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--cor-terciaria);
+  text-decoration: underline;
+}
+
+/* ======= CABEÇALHO ======= */
+header {
+  background-color: var(--cor-primaria);
+  color: var(--cor-clara);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--esp-2) var(--esp-4);
+}
+
+header img {
+  height: 70px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: var(--esp-3);
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: var(--cor-clara);
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--cor-secundaria);
+}
+
+/* ======= RODAPÉ ======= */
+footer {
+  background-color: var(--cor-terciaria);
+  color: var(--cor-clara);
+  text-align: center;
+  padding: var(--esp-3);
+  margin-top: var(--esp-4);
+  font-size: var(--fs-sm);
+}
