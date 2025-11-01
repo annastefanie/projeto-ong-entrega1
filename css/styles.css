@@ -1,98 +1,440 @@
-/* SISTEMA DE DESIGN - S.O.S. PATINHAS */
+/* ==========================
+   Variáveis globais
+========================== */
 :root {
-/* 🎨 Paleta de cores baseada na logo e escolhida por mim, para o projeto */
-  --cor-primaria: #4C6358;
-  --cor-secundaria: #F6F2E7;
-  --cor-terciaria: #2E3E35;
-  --cor-sucesso: #6F8B7E;
-  --cor-alerta: #E6A34A;
-  --cor-erro: #D95D39;
-  --cor-neutra: #E8E6E1;
-  --cor-clara: #FFFFFF;
-  --cor-escura: #1E1E1E;
-
-  /* 🔠 Tipografia */
-  --fonte-principal: 'Poppins', sans-serif;
-  --fonte-secundaria: 'Roboto', sans-serif;
-
-  /* 🧱 Tamanhos de fonte */
-  --fs-xl: 2.5rem;
-  --fs-lg: 2rem;
-  --fs-md: 1.25rem;
-  --fs-sm: 1rem;
-  --fs-xs: 0.875rem;
-
-  /* 📏 Espaçamento modular */
-  --esp-1: 8px;
-  --esp-2: 16px;
-  --esp-3: 24px;
-  --esp-4: 32px;
-  --esp-5: 48px;
-  --esp-6: 64px;
+    --verde-claro: #A8E6CF;  
+    --verde-escuro: #3a725b; 
+    --branco: #FFFFFF;
+    --preto: #000000;
+    --cor-neutra: #E8E6E1;
 }
 
-/* ======= ESTILOS BASE ======= */
+/* ==========================
+   Reset e base
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: var(--fonte-principal);
-  background-color: var(--cor-secundaria);
-  color: var(--cor-escura);
-  line-height: 1.6;
+    font-family: 'Playwrite DE Grund', sans-serif;
+    background-color: var(--branco);
+    color: var(--preto);
 }
 
-h1, h2, h3 {
-  font-family: var(--fonte-secundaria);
-  color: var(--cor-primaria);
+/* ==========================
+   Topo / Header
+========================== */
+.topo {
+    background-color: var(--verde-escuro);
+    padding: 50px 0;
+    text-align: center;
 }
 
-a {
-  color: var(--cor-primaria);
-  text-decoration: none;
-  font-weight: 500;
+.logo {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
-a:hover {
-  color: var(--cor-terciaria);
-  text-decoration: underline;
-}
-
-/* ======= CABEÇALHO ======= */
-header {
-  background-color: var(--cor-primaria);
-  color: var(--cor-clara);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--esp-2) var(--esp-4);
-}
-
-header img {
-  height: 70px;
+/* ==========================
+   Navegação
+========================== */
+nav {
+    background-color: var(--verde-escuro);
+    padding: 15px 0;
 }
 
 nav ul {
-  display: flex;
-  list-style: none;
-  gap: var(--esp-3);
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; 
 }
 
-nav a {
-  color: var(--cor-clara);
-  transition: 0.3s;
+nav ul li a {
+    text-decoration: none;
+    color: var(--branco);
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-nav a:hover {
-  color: var(--cor-secundaria);
+nav ul li a:hover {
+    color: var(--laranja);
 }
 
-/* ======= RODAPÉ ======= */
+/* ==========================
+   Seções gerais
+========================== */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h2 {
+    color: var(--verde-escuro);
+    margin-bottom: 20px;
+}
+
+section p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
+}
+
+.imagem-inicial {
+    width: 90%;        
+    max-width: 800px; 
+    height: auto;     
+    display: block;
+    margin: 20px auto; 
+}
+
+/* ==========================
+   Botões
+========================== */
+button {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--laranja);
+}
+
+#como-ajudar {
+    padding: 60px 20px;
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#como-ajudar h2 {
+    font-family: 'Playwrite DE Grund', sans-serif;
+    color: var(--verde-escuro);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.ajuda-lista {
+    list-style: none;
+}
+
+.ajuda-lista li {
+    margin-bottom: 25px;
+}
+
+.ajuda-item {
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--verde-escuro);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.ajuda-info {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    display: none;
+}
+
+/* efeito clicável */
+.ajuda-item:focus, .ajuda-item:hover {
+    color: var(--laranja);
+}
+
+/* ==========================
+   Formulário Voluntário / Doador
+========================== */
+main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Playwrite DE Grund', sans-serif;
+}
+
+main h1 {
+    text-align: center;
+    color: var(--verde-escuro);
+    margin-bottom: 15px;
+}
+
+main p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* espaço entre fieldsets */
+    background-color: var(--branco);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Fieldsets */
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* espaço entre labels dentro do fieldset */
+}
+
+/* Legend */
+legend {
+    font-weight: bold;
+    color: var(--verde-escuro);
+    padding: 0 5px;
+}
+
+/* Labels e inputs */
+label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+input, textarea, select {
+    padding: 10px 12px;
+    margin-top: 5px; /* espaço entre label e campo */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Botão de envio */
+button {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--laranja);
+}
+
+/* ==========================
+   Responsividade
+========================== */
+@media (max-width: 768px) {
+    main {
+        padding: 30px 15px;
+    }
+
+    input, textarea, select {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 20px 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px 0;
+    }
+}
+
+/* ==========================
+   Rodapé
+========================== */
 footer {
-  background-color: var(--cor-terciaria);
-  color: var(--cor-clara);
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* ==========================
+   Responsividade
+========================== */
+@media (max-width: 768px) {
+    .logo {
+        width: 180px; 
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 140px; 
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    button {
+        width: 100%; 
+        padding: 10px 0;
+    }
+}
+@media (max-width: 768px) {
+    .imagem-inicial {
+        width: 80%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .imagem-inicial {
+        width: 90%;
+        max-width: 300px;
+    }
+}
+/* ==========================
+   Estilo exclusivo da aba Projetos
+========================== */
+.pagina-projetos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background-color: var(--cor-neutra);
+  font-family: 'Playwrite DE Grund', sans-serif;
   text-align: center;
-  padding: var(--esp-3);
-  margin-top: var(--esp-4);
-  font-size: var(--fs-sm);
+}
+
+.pagina-projetos h1 {
+  color: var(--verde-escuro);
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* Container de cards */
+.projetos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Card individual */
+.projeto-card {
+  background-color: var(--branco);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projeto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.projeto-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.projeto-card h2 {
+  color: var(--verde-escuro);
+  font-size: 1.4rem;
+  margin: 16px 20px 10px;
+}
+
+.projeto-card p {
+  color: var(--preto);
+  font-size: 1rem;
+  padding: 0 20px 20px;
+  line-height: 1.5;
+}
+
+/* Botão "Ver mais" */
+.btn-projeto {
+  display: inline-block;
+  align-self: center;
+  margin: 0 0 25px;
+  padding: 10px 22px;
+  background-color: var(--verde-escuro);
+  color: var(--branco);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-projeto:hover {
+  background-color: var(--verde-claro);
+  color: var(--preto);
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .pagina-projetos {
+    padding: 40px 15px;
+  }
+
+  .projeto-card img {
+    height: 180px;
+  }
+
+  .projeto-card h2 {
+    font-size: 1.2rem;
+  }
+}
+/* ====== Lightbox (visualização de imagem ampliada) ====== */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+.lightbox.active {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
